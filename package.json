@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun build src/index.ts --target=bun --outfile=dist/server.js && bun run dist/server.js"
   },
   "dependencies": {
     "hono": "^4.4.0"
