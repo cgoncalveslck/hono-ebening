@@ -7,7 +7,7 @@ app.get('/', async (c) => {
   const s3 = new S3Client({
     region: 'us-east-1', // don't think this matters
     forcePathStyle: true, // idk what this does but it works :)
-    endpoint: String(process.env.MINIO_SERVER_URL),
+    endpoint: String(process.env.MINIO_SERVER_URL + ':' + process.env.MINIO_SERVER_PORT),
     credentials: {
       accessKeyId: String(process.env.SERVICE_USER_MINIO),
       secretAccessKey: String(process.env.SERVICE_PASSWORD_MINIO),
